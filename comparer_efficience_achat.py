@@ -7,23 +7,22 @@ import math
 t = 36
 proportion = [0] * t
 for n in range(1, t + 1):
-    #proportion[n - 1] = 2.5 * n ** 2 + 2.5 * n + 5
-    proportion[n - 1] = 1.5 * n - 0.5
+    proportion[n - 1] = 0.5 * n ** 2 - 0.5 * n + 1
 
 somme = 100000000
 Sv = Sq = 0
 rn = []
 for n in range(t):
-    pn = 100 - 0.5555 * n
+    pn = 100 - 0.3333 * n
     qn = somme * proportion[n] / sum(proportion)
     vn = qn / pn
-    print(pn, qn, vn)
+    print(int(qn))
     Sq += qn
     Sv += vn
     rn.append(Sq / Sv)
 
-print()
-print(rn)
+for r in rn:
+    print(round(r, 4))
 #import matplotlib.pyplot as plt
 #import numpy as np
 
